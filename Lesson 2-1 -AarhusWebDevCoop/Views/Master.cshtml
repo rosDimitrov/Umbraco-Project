@@ -1,0 +1,76 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>@Umbraco.Field("homePageSiteTitle", recursive: true)</title>
+    <meta name="description" content="@Umbraco.Field("metaDescription", recursive: true)" />
+    <meta name="keywords" content="@Umbraco.Field("metaKeywords", recursive: true)" />
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet"/>
+    
+</head>
+	
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">bIgT</a>
+            </div>
+
+
+            
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+
+                        <!-- !!!!!!!!! Home Link-->
+                        @{ var	root = CurrentPage.AncestorOrSelf(1);}
+						<li class="@(CurrentPage.Name == root.Name ? "active" : null)">
+						<a href="/">@root.Name</a>
+                      
+                        <!-- !!!!!!!!! Navigation links-->
+                        @Umbraco.RenderMacro("NavigationMenu")
+						@Umbraco.RenderMacro("dropdownMenu")                 
+                    </ul>
+
+
+                </div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+    </nav>
+
+    <main>
+        <div>
+            
+            @RenderBody()
+
+            @if(CurrentPage.Name == root.Name){
+            <img src="~/Media/back.jpg" />
+            }
+				@if(CurrentPage.Name == root.Name){
+				<h2 class="text-center"> Our newest projects</h2>
+			@Umbraco.RenderMacro("NewestCompletedProjects")}				
+        </div>
+    </main>
+    <footer class="text-center">
+	@Umbraco.Field("homePageFooterText", recursive: true)
+    </footer>
+    <script src="~/scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/scripts/bootstrap.min.js"></script>
+
+    <script src="~/scripts/jquery.validate.min.js"></script>
+    <script src="~/scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

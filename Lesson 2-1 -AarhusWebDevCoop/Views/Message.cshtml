@@ -1,0 +1,36 @@
+﻿@model Lesson_2_1__AarhusWebDevCoop.Models.Message
+@{
+    Layout = null;
+}
+
+@if (true)
+{
+    using (Html.BeginUmbracoForm("HandleMessageSubmit", "MessageSurface", new object { }, new { @class = "form-horizontal" }))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.Name, new { @class = "col-sm-2 control-label" })
+            <div class="col-sm-6">
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Name" })
+                @Html.ValidationMessageFor(m => m.Name)
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserMessage, new { @class = "col-sm-2 control-label" })
+            <div class="col-sm-6">
+                @Html.TextBoxFor(m => m.UserMessage, new { @class = "form-control", placeholder = "User Message" })
+                @Html.ValidationMessageFor(m => m.UserMessage)
+
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-6">
+                <button id="contact-submit" type="submit" class="btn btn-primary input-medium pull-left">Send message</button>
+            </div>
+        </div>
+
+    }
+}

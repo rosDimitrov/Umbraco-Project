@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+	
+@{
+	var selection = CurrentPage.Site().FirstChild("projectsHomePage").Children.Where("Visible").OrderBy("CreateDate desc").Take(2);
+}
+
+	@foreach(var item in selection){
+		<div class="col-xs-6">
+			<h3 class="text-center">@item.Name</h3>
+			<p>@item.projectContent</p>
+			<p class="text-center"><a class="text-center" href="/projects">Find More Projects</a></p>
+		</div>
+	}
+
+

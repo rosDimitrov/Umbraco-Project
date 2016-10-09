@@ -1,0 +1,72 @@
+
+html{
+    height:100%;
+}
+body{
+     background-color:#F3F5F7;
+     height:100%;
+  
+ }
+main{
+
+  padding-bottom: 100px; /* must be same height as the footer */
+
+}
+
+footer{
+    position:fixed;
+    bottom:20px;
+    left:40%;
+
+}
+a{
+	color:#143E54;
+}
+
+
+a:hover{
+	color:#44E647;
+}
+
+h2{
+    margin:30px;
+    color:#44E647;
+}
+h3{
+    margin-bottom:30px;
+}
+.overflow-hidden{
+    overflow:hidden;
+}
+.articles{
+    width:90%;
+  margin:0 auto;
+
+}
+.projects{
+    margin-bottom:70px;
+    width:90%;
+  margin:0 auto;
+}
+.contact{
+    overflow:hidden;
+    margin:100px; auto;
+}
+.members{
+    width:50%;
+    float:left;
+    margin-bottom:50px;
+}
+.messages{
+    width:80%;
+    margin:0 auto;
+}
+hr{
+	border-color:#44E647;
+    width:80%;
+}
+
+
+img{
+	max-width:100%;
+}

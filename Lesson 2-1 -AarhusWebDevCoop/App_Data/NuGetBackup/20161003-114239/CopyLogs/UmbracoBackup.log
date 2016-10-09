@@ -1,0 +1,27 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : Mon Oct 03 11:42:39 2016
+
+   Source : C:\Projects\Umbraco\Lesson 2-1 -AarhusWebDevCoop\Umbraco\
+     Dest : C:\Projects\Umbraco\Lesson 2-1 -AarhusWebDevCoop\App_Data\NuGetBackup\20161003-114239\Umbraco\
+
+    Files : *.*
+	    
+  Options : *.* /S /E /COPY:DAT /R:1000000 /W:30 
+
+------------------------------------------------------------------------------
+
+	                   0	C:\Projects\Umbraco\Lesson 2-1 -AarhusWebDevCoop\Umbraco\
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         1         0         1         0         0         0
+   Files :         0         0         0         0         0         0
+   Bytes :         0         0         0         0         0         0
+   Times :   0:00:00   0:00:00                       0:00:00   0:00:00
+
+   Ended : Mon Oct 03 11:42:39 2016

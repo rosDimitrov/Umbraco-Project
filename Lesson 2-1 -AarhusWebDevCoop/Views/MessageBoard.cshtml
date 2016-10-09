@@ -1,0 +1,13 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.MessageBoard>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "Master.cshtml";
+}
+<h1 class="text-center">@Umbraco.Field("messageBoardHeading")</h1>
+<p class="text-center">@Umbraco.Field("messageBoardText")</p>
+<div class="overflow-hidden">@Html.Action("Index","MessageSurface")</div>
+	
+
+	<h3 class="text-center">Latest Comments:</h3>
+    
+	@Umbraco.RenderMacro("ListMessages")
